@@ -4,6 +4,9 @@
 artifactory_client_install:
   pkg.installed:
   - names: {{ client.pkgs }}
+{%- if client.version is defined %}
+  - version: {{ client.version }}
+{%- endif %}
 
 include:
 - artifactory.client.config

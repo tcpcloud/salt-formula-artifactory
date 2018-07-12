@@ -8,6 +8,7 @@ Debian:
   service: artifactory
   lib:
     postgresql: https://jdbc.postgresql.org/download/postgresql-9.4.1209.jre6.jar
+    mysql: {{ salt['pillar.get']('artifactory:server:database:connector_jar') }}
   database:
     engine: derby
 RedHat:
@@ -16,6 +17,7 @@ RedHat:
   service: artifactory
   lib:
     postgresql: https://jdbc.postgresql.org/download/postgresql-9.4.1209.jre6.jar
+    mysql: {{ salt['pillar.get']('artifactory:server:database:connector_jar') }}
   database:
     engine: derby
 {%- endload %}

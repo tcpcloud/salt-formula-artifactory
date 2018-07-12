@@ -4,6 +4,9 @@
 artifactory_packages:
   pkg.installed:
   - names: {{ server.pkgs }}
+{%- if server.version is defined %}
+  - version: {{ server.version }}
+{%- endif %}
 
 artifactory_storage_config:
   file.managed:

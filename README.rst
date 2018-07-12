@@ -50,6 +50,27 @@ Single artifactory with PostgreSQL database
           user: artifactory
           password: pass
 
+Single artifactory with MySQL database and a set version
+
+.. code-block:: yaml
+
+    artifactory:
+      server:
+        enabled: true
+        edition: pro
+        version: 5.11.0-51100900
+        database:
+          engine: mysql
+          host: localhost
+          port: 3306
+          name: artdb
+          user: artifactory
+          password: password
+          connector_jar: /usr/share/java/mysql-connector-java.jar
+        source:
+          engine: pkg
+
+
 Client
 ------
 
